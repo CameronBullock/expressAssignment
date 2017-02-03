@@ -1,0 +1,22 @@
+<a href='/'>Back</a>
+<h1>Courses</h1>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Description</th>
+  </thead>
+  <tbody>
+    <% products.forEach( function(course) { %>
+        <% var url = '/course/' + course.id %>
+         <tr>
+           <td>
+             <a href=<%= url %> >Show</a>
+           </td>
+           <td> <%= course.name %> </td>
+           <td> <%= course.price %> </td>
+           <td> <%= course.description %> </td>
+         </tr>
+    <% }); %>
+  </tbody>
+</table>
