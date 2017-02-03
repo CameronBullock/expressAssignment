@@ -1,22 +1,108 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://getbootstrap.com/examples/starter-template/ -->
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="">
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+
+
+  <title>Courses</title>
+
+  <style>
+
+  .card {
+    height: 600px;
+    margin-top: 50px;
+  }
+
+  .card h4 {
+    font-size: 1.5em;
+    margin-left: 20px;
+    color: #53bd53;
+}
+.card .card-title {
+    color: #333333;
+    font-weight: 400;
+}
+/*.hero_bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(6, 6, 6, 0.5);
+}*/
+.hero_bg img{
+  display: inline;
+}
+h5.header {
+  font-weight: 100;
+}
+.parallax-container .container {
+    padding-top: 50px;
+}
+
+  </style>
+
+</head>
+
 <a href='/'>Back</a>
-<h1>Courses</h1>
-<table>
-  <thead>
-    <th>Name</th>
-    <th>Price</th>
-    <th>Description</th>
-  </thead>
-  <tbody>
+
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center white-text text-lighten-2">Our Courses</h1>
+      <div class="row center">
+        <h5 class="header col s12 white-text">Expert-led online video tutorials– anytime, anywhere.</h5>
+      </div>
+      <div class="row center">
+        <a href="#courses" id="download-button" class="btn-large waves-effect waves-light green">Get Started</a>
+      </div>
+      <br><br>
+
+    </div>
+  </div>
+  <div class="hero_bg parallax"><img src="https://wallpaperscraft.com/image/cubes_grid_background_dark_texture_50364_1920x1080.jpg" alt=""></div>
+</div>
+
+<div class="container" id="courses">
+<div class="row">
     <% courses.forEach( function(course) { %>
-        <% var url = '/course/' + course.id %>
-         <tr>
-           <td>
-             <a href=<%= url %> >Show</a>
-           </td>
-           <td> <%= course.name %> </td>
-           <td> <%= course.price %> </td>
-           <td> <%= course.description %> </td>
-         </tr>
-    <% }); %>
-  </tbody>
-</table>
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-image">
+        <% var link_url = '/course/' + course.id %>
+        <% var img_url = course.course_image %>
+        <img src=" <%= img_url %>" alt="">
+
+        <a class="btn-floating btn-large halfway-fab waves-effect waves-light green" href=<%= link_url %> > <i class="material-icons">search</i></a>
+        </div>
+
+        <div class="card-content">
+          <span class="card-title"> <%= course.name %> - $<%= course.price %></span>
+          <p> <%= course.description %> </p>
+        </div>
+
+      </div>
+      </div>
+
+      <% }); %>
+
+</div>
+
+  </div>
