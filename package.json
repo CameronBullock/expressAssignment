@@ -1,7 +1,11 @@
 {
-  "name": "",
-  "version": "",
+  "name": "express-assignent",
+  "version": "1.0.0",
   "dependencies": {
+    "ejs": "^2.5.5",
     "express": "^4.14.1"
-  }
+  },
+  "scripts": {
+  "start": "node index.js"
+},
 }
