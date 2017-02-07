@@ -17,12 +17,12 @@ app.get('/courses', function(request, response){
 app.get('/courses/:id',function(request,response){
   fs.readFile('courses.json', 'utf8', function(err, data){
     var coursesParsed = JSON.parse(data);
-    var courses = productsParsed.filter( function (ojb){
+    var course = productsParsed.filter( function (ojb){
       return obj.id === parseInt(request.params.id);
     })[0];
 
     response.locals = {course: course};
-    response.render('courses.ejs');
+    response.render('course.ejs');
   });
 });
 
